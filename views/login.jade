@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p= copy
+
+  // Wrapper
+  #wrapper
+    form(name="login", action="/login", method="post")
+      input(type="text", name="user", placeholder="username")
+      input(type="password", name="pass", placeholder="password")
+      input(type="submit", value="login")
+  // /WRAPPER

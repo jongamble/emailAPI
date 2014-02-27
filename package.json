@@ -1,0 +1,19 @@
+{
+  "name": "email-backup",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "mongodb": "*",
+    "mongoskin": "*",
+    "passport": "~0.2.0",
+    "passport-local": "~0.1.6",
+    "connect-flash": "~0.1.1",
+    "errno": "~0.1.0",
+    "bcrypt-nodejs": "0.0.3"
+  }
+}
