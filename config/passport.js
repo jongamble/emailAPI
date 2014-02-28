@@ -39,7 +39,7 @@ module.exports = function(passport) {
         passwordField : 'password',
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
-    function(req, username, password, domain, email, name, flagAdmin, flagActive, done) {
+    function(req, username, password, email, name, flagAdmin, flagActive, done) {
 
         // asynchronous
         // User.findOne wont fire unless data is sent back
@@ -47,7 +47,7 @@ module.exports = function(passport) {
 
 		// find a user whose domain is the same as the forms domain
 		// we are checking to see if the user trying to login already exists
-        User.findOne({ 'local.username' :  domain }, function(err, user) {
+        User.findOne({ 'local.username' :  username }, function(err, user) {
             // if there are any errors, return the error
             if (err)
                 return done(err);
@@ -62,11 +62,11 @@ module.exports = function(passport) {
                 var newUser            = new User();
 
                 // set the user's local credentials
-                newUser.domain = domain;
+                newUser.domain = username;
                 newUser.email = email;
                 newUser.flagActive = flagActive;
                 newUser.flagAdmin = flagAdmin;
-                newUser.local.username    = domain;
+                newUser.local.username    = username;
                 newUser.local.password = newUser.generateHash(password);
                 newUser.name = name;
 
