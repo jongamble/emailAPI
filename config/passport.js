@@ -68,7 +68,7 @@ module.exports = function(passport) {
                 newUser.flagAdmin = req.body.flagAdmin;
                 newUser.local.username    = username;
                 newUser.local.password = newUser.generateHash(password);
-                newUser.name = name;
+                newUser.name = req.body.name;
 
 				// save the user
                 newUser.save(function(err) {
