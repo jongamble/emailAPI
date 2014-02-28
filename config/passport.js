@@ -62,8 +62,13 @@ module.exports = function(passport) {
                 var newUser            = new User();
 
                 // set the user's local credentials
-                newUser.local.email    = email;
+                newUser.domain = domain;
+                newUser.email = email;
+                newUser.flagActive = flagActive;
+                newUser.flagAdmin = flagAdmin;
+                newUser.local.username    = domain;
                 newUser.local.password = newUser.generateHash(password);
+                newUser.name = name;
 
 				// save the user
                 newUser.save(function(err) {
