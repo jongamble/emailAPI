@@ -20,17 +20,26 @@
 	<div class="row">
 
 		<!-- LOCAL INFORMATION -->
-		<div class="col-sm-6">
+		<div class="col-sm-12">
 			<div class="well">
 				<h3><span class="fa fa-user"></span> Local</h3>
 				<table class="table-striped">
 					<tbody>
+						<tr>
+							<th>Domain</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Active?</th>
+							<th>Admin?</th>
+							<th>ID #</th>
+						</tr>
 					<% for(var i=0; i<items.length; i++) {%>
 						<tr>
 							<td><%= items[i].domain %></td>
 							<td><%= items[i].name %></td>
 							<td><%= items[i].email %></td>
 							<td><%= items[i].flagActive %></td>
+							<td><%= items[i].flagAdmin %></td>
 							<td><%= items[i]._id %></td>
 						</tr>
 					<% } %>
