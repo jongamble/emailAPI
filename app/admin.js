@@ -22,6 +22,17 @@ module.exports = function(app) {
 	});
 
 
+	/*
+	 * DELETE to deleteuser.
+	*/
+
+	app.delete('/deleteuser/:id', isLoggedIn, isAdmin,function(req, res) {
+		User.remove({_id: req.params.id}, function(err, result) {
+			res.json((result === 1) ? { msg: '' } : { msg:'error: ' + err });
+		});
+	};
+
+
 };
 
 // route middleware to make sure a user is logged in
