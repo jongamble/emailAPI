@@ -97,14 +97,14 @@ module.exports = function(passport) {
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     function(req, domain, password, done) { // callback with email and password from our form
-
+        console.log(domain);
         // find a user whose email is the same as the forms email
         // we are checking to see if the user trying to login already exists
         User.findOne({ 'domain' :  domain }, function(err, user) {
             // if there are any errors, return the error before anything else
+            console.log(err);
             if (err)
                 return done(err);
-
             // if no user is found, return the message
             if (!user)
                 return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
