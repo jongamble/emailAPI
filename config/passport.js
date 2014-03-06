@@ -44,7 +44,7 @@ module.exports = function(passport) {
         // asynchronous
         // User.findOne wont fire unless data is sent back
         process.nextTick(function() {
-        console.log(username);
+        console.log(User.findOne({ 'domain' :  username }));
 		// find a user whose domain is the same as the forms domain
 		// we are checking to see if the user trying to login already exists
         User.findOne({ 'domain' :  username }, function(err, user) {
