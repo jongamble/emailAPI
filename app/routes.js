@@ -81,5 +81,4 @@ var isAdmin = function(req, res, next) {
 		return next();
 	else
 		return false;
-  };
 };
