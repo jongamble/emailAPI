@@ -25,26 +25,18 @@
 				<h3><span class="fa fa-user"></span> Local</h3>
 				<table class="table-striped">
 					<tbody>
-					<% for(var i=0; i<userList.length; i++) {%>
+					<% for(var i=0; i<items.length; i++) {%>
 						<tr>
-							<td><%= userList[i].domain %></td>
-							<td><%= userList[i].name %></td>
-							<td><%= userList[i].email %></td>
-							<td><%= userList[i].flagActive %></td>
-							<td><%= userList[i]._id %></td>
+							<td><%= items[i].domain %></td>
+							<td><%= items[i].name %></td>
+							<td><%= items[i].email %></td>
+							<td><%= items[i].flagActive %></td>
+							<td><%= items[i]._id %></td>
 						</tr>
 					<% } %>
 					</tbody>
 				</table>
-					<p>
-						<strong>ID</strong>: <%= user._id %><br>
-						<strong>Domain</strong>: <%= user.domain %><br>
-						<strong>Name</strong>: <%= user.name %><br>
-						<strong>Is Active</strong>: <%= user.flagActive %><br>
-						<strong>Is Admin</strong>: <%= user.flagAdmin %><br>
-						<strong>email</strong>: <%= user.email %><br>
-						<strong>password</strong>: <%= user.local.password %>
-					</p>
+					
 
 			</div>
 		</div>
