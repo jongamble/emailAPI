@@ -79,6 +79,7 @@ function isLoggedIn(req, res, next) {
 		return next();
 
 	// if they aren't redirect them to the home page
+	console.log('Not Authenticated');
 	res.redirect('/');
 }
 
@@ -87,5 +88,6 @@ var isAdmin = function(req, res, next) {
 		return next();
 	
 	// if they aren't redirect them to the home page
+	console.log('Not an Admin');
 	res.redirect('/profile');
 };
