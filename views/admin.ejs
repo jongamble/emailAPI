@@ -22,7 +22,7 @@
 		<!-- LOCAL INFORMATION -->
 		<div class="col-sm-12">
 			<div class="well">
-				<h3><span class="fa fa-user"></span> Local</h3>
+				<h3><span class="fa fa-user"></span> Current Users</h3>
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -31,7 +31,8 @@
 							<th>Email</th>
 							<th>Active?</th>
 							<th>Admin?</th>
-							<th>ID #</th>
+							<th>Edit</th>
+							<th>Delete</th>
 						</tr>
 					</thead>	
 					<tbody>
@@ -42,7 +43,8 @@
 							<td><%= items[i].email %></td>
 							<td><%= items[i].flagActive %></td>
 							<td><%= items[i].flagAdmin %></td>
-							<td><%= items[i]._id %></td>
+							<td><a href="#" class="editLink" rel="<%= items[i]._id %>">Edit</a></td>
+							<td><a href="#" class="deleteLink" rel="<%= items[i]._id %>">Delete</a></td>
 						</tr>
 					<% } %>
 					</tbody>
@@ -55,5 +57,6 @@
 	</div>
 
 </div>
+<script src="/js/scripts.js" type="javascript" language="text/javascript" />
 </body>
 </html>
