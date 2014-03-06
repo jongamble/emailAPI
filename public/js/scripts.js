@@ -11,7 +11,7 @@ function deleteUser(event) {
       else {
         alert(response.msg);
       }
-      populateTable();
+      window.history.pushState({ path: window.location }, '', window.location);
     });
   }
   else {
