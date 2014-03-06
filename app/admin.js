@@ -16,7 +16,7 @@ module.exports = function(app) {
 	app.get('/admin', isLoggedIn, isAdmin,function(req, res) {
 		User.find().exec(function (err, items) {
 			res.render('admin.ejs', {
-				items : userList // get the user out of session and pass to template
+				items : items // get the user out of session and pass to template
 			});
 	   	});
 	});
