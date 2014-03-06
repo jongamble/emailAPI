@@ -6,14 +6,14 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<style>
-		body 		{ padding-top:80px; word-wrap:break-word; }
+		body { padding-top:80px; word-wrap:break-word; }
 	</style>
 </head>
 <body>
 <div class="container">
 
 	<div class="page-header text-center">
-		<h1><span class="fa fa-anchor"></span> Profile Page</h1>
+		<h1><span class="fa fa-anchor"></span> Admin Page</h1>
 		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
 	</div>
 
@@ -23,7 +23,19 @@
 		<div class="col-sm-6">
 			<div class="well">
 				<h3><span class="fa fa-user"></span> Local</h3>
-
+				<table class="table-striped">
+					<tbody>
+					<% for(var i=0; i<userList.length; i++) {%>
+						<tr>
+							<td><%= userList[i].domain %></td>
+							<td><%= userList[i].name %></td>
+							<td><%= userList[i].email %></td>
+							<td><%= userList[i].flagActive %></td>
+							<td><%= userList[i]._id %></td>
+						</tr>
+					<% } %>
+					</tbody>
+				</table>
 					<p>
 						<strong>ID</strong>: <%= user._id %><br>
 						<strong>Domain</strong>: <%= user.domain %><br>

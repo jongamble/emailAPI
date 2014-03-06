@@ -57,9 +57,11 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/admin', isLoggedIn, isAdmin,function(req, res) {
-		res.render('admin.ejs', {
-			user : req.user // get the user out of session and pass to template
-		});
+		db.collection('userlist').find().toArray(function (err, items) {
+			res.render('admin.ejs', {
+				items : userList // get the user out of session and pass to template
+			});
+	   	});
 	});
 
 	// =====================================
