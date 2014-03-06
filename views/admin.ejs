@@ -23,8 +23,8 @@
 		<div class="col-sm-12">
 			<div class="well">
 				<h3><span class="fa fa-user"></span> Local</h3>
-				<table class="table-striped">
-					<tbody>
+				<table class="table table-striped">
+					<thead>
 						<tr>
 							<th>Domain</th>
 							<th>Name</th>
@@ -33,6 +33,8 @@
 							<th>Admin?</th>
 							<th>ID #</th>
 						</tr>
+					</thead>	
+					<tbody>
 					<% for(var i=0; i<items.length; i++) {%>
 						<tr>
 							<td><%= items[i].domain %></td>
