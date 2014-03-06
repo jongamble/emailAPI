@@ -47,14 +47,14 @@ module.exports = function(passport) {
 
 		// find a user whose domain is the same as the forms domain
 		// we are checking to see if the user trying to login already exists
-        User.findOne({ 'local.domain' :  username }, function(err, user) {
+        User.findOne({ 'local.username' :  username }, function(err, user) {
             // if there are any errors, return the error
             if (err)
                 return done(err);
 
             // check to see if theres already a user with that email
             if (user) {
-                return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
+                return done(null, false, req.flash('signupMessage', 'That domain is already taken.'));
             } else {
 
 				// if there is no user with that email
@@ -66,7 +66,7 @@ module.exports = function(passport) {
                 newUser.email = req.body.email;
                 newUser.flagActive = req.body.flagActive;
                 newUser.flagAdmin = req.body.flagAdmin;
-                newUser.local.username    = username;
+                newUser.local.username    = req.body.domain;
                 newUser.local.password = newUser.generateHash(password);
                 newUser.name = req.body.name;
 
