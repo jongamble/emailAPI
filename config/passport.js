@@ -47,7 +47,7 @@ module.exports = function(passport) {
 
 		// find a user whose domain is the same as the forms domain
 		// we are checking to see if the user trying to login already exists
-        User.findOne({ 'local.username' :  username }, function(err, user) {
+        User.findOne({ 'local.domain' :  username }, function(err, user) {
             // if there are any errors, return the error
             if (err)
                 return done(err);
