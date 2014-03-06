@@ -22,3 +22,23 @@ module.exports = function(app, db) {
 
 
 };
+// route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
+
+	// if user is authenticated in the session, carry on 
+	if (req.isAuthenticated())
+		return next();
+
+	// if they aren't redirect them to the home page
+	console.log('Not Authenticated');
+	res.redirect('/');
+}
+
+var isAdmin = function(req, res, next) {
+	if (req.user && req.user.flagAdmin === true)
+		return next();
+	
+	// if they aren't redirect them to the home page
+	console.log('Not an Admin');
+	res.redirect('/profile');
+};
