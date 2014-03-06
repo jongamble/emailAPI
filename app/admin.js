@@ -1,3 +1,4 @@
+var User	=	require('../app/models/user');
 // app/admin.js
 module.exports = function(app) {
 
