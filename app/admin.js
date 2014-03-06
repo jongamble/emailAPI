@@ -30,7 +30,7 @@ module.exports = function(app) {
 		User.remove({_id: req.params.id}, function(err, result) {
 			res.json((result === 1) ? { msg: '' } : { msg:'error: ' + err });
 		});
-	};
+	});
 
 
 };
