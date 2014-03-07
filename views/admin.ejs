@@ -1,6 +1,6 @@
 <!-- views/admin.ejs -->
 <!doctype html>
-<html>
+<html ng-app="adminFunctions">
 <head>
 	<title>Node Authentication</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
@@ -9,7 +9,7 @@
 		body { padding-top:80px; word-wrap:break-word; }
 	</style>
 </head>
-<body>
+<body ng-controller="mainController">
 <div class="container">
 
 	<div class="page-header text-center">
@@ -18,7 +18,7 @@
 	</div>
 
 	<div class="row">
-
+		{{ users }}
 		<!-- LOCAL INFORMATION -->
 		<div class="col-sm-7">
 			<div class="well">
