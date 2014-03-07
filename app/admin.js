@@ -59,6 +59,7 @@ module.exports = function(app, mongoose, passport) {
 	app.get('/admin/editUser/:id', isLoggedIn, isAdmin, function(req, res) {
 		User.find({_id: req.params.id}).exec(function (err, user) {
 				res.render('editUser.ejs', { user : user });
+				console.log(user);
 		});
 		// render the page and pass in any flash data if it exists
 	});
