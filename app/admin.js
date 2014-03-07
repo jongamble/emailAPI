@@ -1,6 +1,6 @@
 var User	=	require('../app/models/user');
 // app/admin.js
-module.exports = function(app) {
+module.exports = function(app, mongoose, passport) {
 
 	// =====================================
 	// PROFILE SECTION =====================
@@ -26,6 +26,24 @@ module.exports = function(app) {
 			res.json(items);
 	   	});
 	})
+
+
+	// =====================================
+	// Create User =========================
+	// =====================================
+	// show the create user form
+	app.get('/admin/createUser', isLoggedIn, isAdmin, function(req, res) {
+
+		// render the page and pass in any flash data if it exists
+		res.render('signup.ejs', { message: req.flash('signupMessage') });
+	});
+
+	// process the signup form
+	app.post('/admin/createUser', passport.authenticate('local-signup', {
+		successRedirect : '/admin', // redirect to the secure profile section
+		failureRedirect : '/createUser', // redirect back to the signup page if there is an error
+		failureFlash : true // allow flash messages
+	}));
 
 
 	/*
