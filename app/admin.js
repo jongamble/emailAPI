@@ -34,7 +34,10 @@ module.exports = function(app) {
 
 	app.delete('/admin/deleteuser/:id', isLoggedIn, isAdmin,function(req, res) {
 		User.remove({_id: req.params.id}, function(err, result) {
-			res.json((result === 1) ? { msg: '' } : { msg:'error: ' + err });
+			User.find().exec(function (err, items) {
+				res.json((result === 1) ? { items } : { msg:'error: ' + err });
+				
+		   	});
 		});
 	});
 
