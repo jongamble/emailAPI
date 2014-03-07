@@ -21,6 +21,12 @@ module.exports = function(app) {
 	   	});
 	});
 
+	app.get('/admin/listUsers', isLoggedIn, isAdmin, function(req, res){
+		User.find().exec(function (err, items) {
+			res.json(items);
+	   	});
+	})
+
 
 	/*
 	 * DELETE to deleteuser.

@@ -5,7 +5,7 @@ function mainController($scope, $http) {
 	$scope.formData = {};
 
 	// when landing on the page, get all todos and show them
-	$http.get('/admin')
+	$http.get('/admin/listUsers')
 		.success(function(data) {
 			$scope.users = data;
 			console.log(data);
