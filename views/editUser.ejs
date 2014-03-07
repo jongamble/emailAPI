@@ -20,23 +20,23 @@
 	<form action="/admin/editUser/<%=user._id%>" method="put">
 		<div class="form-group">
 			<label>Domain Name</label>
-			<input type="text" class="form-control" name="domain" value="<%=user.domain%>">
+			<input type="text" class="form-control" name="domain" value="<%= user[0].domain %>">
 		</div>
 		<div class="form-group">
 			<label>Name</label>
-			<input type="text" class="form-control" name="name" value="<%=user.name%>">
+			<input type="text" class="form-control" name="name" value="<%= user[0].name %>">
 		</div>
 		<div class="form-group">
 			<label>Email</label>
-			<input type="text" class="form-control" name="email" value="<%=user.email%>">
+			<input type="text" class="form-control" name="email" value="<%= user[0].email %>">
 		</div>
 		<div class="form-group">
 			<label>Is Admin?</label>
-			<input type="checkbox" class="form-control" name="flagAdmin" value="<%=user.flagAdmin%>">
+			<input type="checkbox" class="form-control" name="flagAdmin" value="<%= user[0].flagAdmin %>">
 		</div>
 		<div class="form-group">
 			<label>Is Active?</label>
-			<input type="checkbox" class="form-control" name="flagActive" value="<%=user.flagActive%>">
+			<input type="checkbox" class="form-control" name="flagActive" value="<%= user[0].flagActive %>">
 		</div>
 		
 		<button type="submit" class="btn btn-warning btn-lg">Signup</button>
