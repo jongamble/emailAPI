@@ -31,7 +31,7 @@ function mainController($scope, $http) {
 	$scope.deleteUser = function(id) {
 		$http.delete('/admin/deleteuser/' + id)
 			.success(function(data) {
-				//$scope.users = data;
+				$scope.users = data;
 				console.log(data);
 			})
 			.error(function(data) {
