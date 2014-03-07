@@ -8,7 +8,7 @@ function mainController($scope, $http) {
 	$http.get('/admin/listUsers')
 		.success(function(data) {
 			$scope.users = data;
-			console.log(data);
+			//console.log(data);
 		})
 		.error(function(data) {
 			console.log('Error: ' + data);
@@ -32,7 +32,7 @@ function mainController($scope, $http) {
 		$http.delete('/admin/deleteuser/' + id)
 			.success(function(data) {
 				$scope.users = data;
-				console.log(data);
+				//console.log(data);
 			})
 			.error(function(data) {
 				console.log('Error: ' + data);

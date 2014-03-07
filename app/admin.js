@@ -46,6 +46,23 @@ module.exports = function(app, mongoose, passport) {
 	}));
 
 
+	// =====================================
+	// Create User =========================
+	// =====================================
+	// show the create user form
+	app.get('/admin/editUser/:id', isLoggedIn, isAdmin, function(req, res) {
+
+		// render the page and pass in any flash data if it exists
+		res.render('editUser.ejs', { message: req.flash('editMessage') });
+	});
+
+	// process the signup form
+	app.post('/admin/createUser', passport.authenticate('local-signup', {
+		successRedirect : '/admin', // redirect to the secure profile section
+		failureRedirect : '/createUser', // redirect back to the signup page if there is an error
+		failureFlash : true // allow flash messages
+	}));
+
 	/*
 	 * DELETE to deleteuser.
 	*/
