@@ -36,15 +36,14 @@
 						</tr>
 					</thead>	
 					<tbody>
-					<% for(var i=0; i<items.length; i++) {%>
-						<tr>
-							<td><%= items[i].domain %></td>
-							<td><%= items[i].name %></td>
-							<td><%= items[i].email %></td>
-							<td><%= items[i].flagActive %></td>
-							<td><%= items[i].flagAdmin %></td>
-							<td><a href="#" class="editLink" rel="<%= items[i]._id %>">Edit</a></td>
-							<td><a href="#" class="deleteLink" rel="<%= items[i]._id %>">Delete</a></td>
+						<tr ng-repeat="user in users">
+							<td>{{user.domain}}</td>
+							<td>{{user.name}}</td>
+							<td>{{user.email}}</td>
+							<td>{{user.flagActive}}</td>
+							<td>{{user.flagAdmin}}</td>
+							<td><a href="#" class="editLink" rel="{{user._id}}">Edit</a></td>
+							<td><a href="#" class="deleteLink" rel="{{user._id}}">Delete</a></td>
 						</tr>
 					<% } %>
 					</tbody>
