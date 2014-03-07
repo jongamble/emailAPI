@@ -42,8 +42,8 @@
 							<td>{{user.email}}</td>
 							<td>{{user.flagActive}}</td>
 							<td>{{user.flagAdmin}}</td>
-							<td><a href="#" class="editLink" rel="{{user._id}}">Edit</a></td>
-							<td><a href="#" class="deleteLink" rel="{{user._id}}">Delete</a></td>
+							<td><a href="#" ng-click="deleteTodo(user._id)">Edit</a></td>
+							<td><a href="#" ng-click="deleteTodo(user._id)">Delete</a></td>
 						</tr>
 					</tbody>
 				</table>
