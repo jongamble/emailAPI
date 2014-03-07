@@ -51,9 +51,10 @@ module.exports = function(app, mongoose, passport) {
 	// =====================================
 	// show the create user form
 	app.get('/admin/editUser/:id', isLoggedIn, isAdmin, function(req, res) {
-
+		User.find({_id: req.params.id}).exec(function (err, user) {
+				res.render('editUser.ejs', { user : user });
+		});
 		// render the page and pass in any flash data if it exists
-		res.render('editUser.ejs', { message: req.flash('editMessage') });
 	});
 
 	// process the signup form

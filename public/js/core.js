@@ -39,4 +39,14 @@ function mainController($scope, $http) {
 			});
 	};
 
+	// when landing on the page, get all todos and show them
+	$http.get('/admin/editUser/:id')
+		.success(function(data) {
+			$scope.user = data;
+			//console.log(data);
+		})
+		.error(function(data) {
+			console.log('Error: ' + data);
+		});
+
 }
