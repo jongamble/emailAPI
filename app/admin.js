@@ -25,6 +25,12 @@ module.exports = function(app, mongoose, passport) {
 		User.find().exec(function (err, items) {
 			res.json(items);
 	   	});
+	});
+
+	app.get('/admin/listUsers/:id', isLoggedIn, isAdmin, function(req, res){
+		User.find({_id: req.params.id}).exec(function (err, items) {
+			res.json(items);
+	   	});
 	})
 
 
