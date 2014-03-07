@@ -29,7 +29,7 @@ function mainController($scope, $http) {
 
 	// delete a todo after checking it
 	$scope.deleteUser = function(id) {
-		$http.delete('/deleteuser/' + id)
+		$http.delete('/admin/deleteuser/' + id)
 			.success(function(data) {
 				$scope.users = data;
 				console.log(data);
