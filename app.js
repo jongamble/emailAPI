@@ -38,6 +38,7 @@ app.configure(function() {
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 require('./app/admin.js')(app, mongoose, passport); // load our routes and pass in our app and fully configured passport
 require('./app/client.js')(app, mongoose, passport); // load our routes and pass in our app and fully configured passport
+require('./app/api.js')(app, mongoose, passport); // load our routes and pass in our app and fully configured passport
 
 
 // launch ======================================================================
