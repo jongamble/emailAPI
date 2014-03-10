@@ -51,16 +51,42 @@
 		</div>
 		<div class="col-sm-12">
 			<div class="well">
-				<h3><span class="fa fa-user"></span> Current Users</h3>
+				<h3><span class="fa fa-user"></span> Create Lead</h3>
 				<form action="/admin/createLead" class="form-horizontal">
 					<div class="control-group">
 						<label for="clientID" class="control-label">Client ID</label>
 						<div class="controls">
-							<select name="clientID">
+							<select name="clientID" class="span3">
 								<option ng-repeat="user in users" value="{{user._id}}">{{user.domain}}</option>
 							</select>
 						</div>
 					</div>
+					<div class="control-group">
+						<label for="leadName" class="control-label">Lead Name</label>
+						<div class="controls">
+							<input type="text" class="span3" name="leadName">
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="leadEmail" class="control-label">Lead Email</label>
+						<div class="controls">
+							<input type="text" class="span3" name="leadEmail">
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="leadAddress" class="control-label">Lead Address</label>
+						<div class="controls">
+							<input type="text" class="span3" name="leadAddress">
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="leadComments" class="control-label">Lead Comments</label>
+						<div class="controls">
+							<input type="text" class="span3" name="leadComments">
+						</div>
+					</div>
+
+					<button class="btn btn-large" type="submit" name="submit" value="submit">Submit</button>
 				</form>
 
 	</div>

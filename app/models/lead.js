@@ -2,14 +2,13 @@
 // load the things we need
 var mongoose = require('mongoose');
 
-var ObjectId = mongoose.Schema.ObjectId;
 // define the schema for our user model
 var leadSchema = mongoose.Schema({
-	clientID: ObjectId,
+	clientID: mongoose.Schema.Types.ObjectId,
 	content: mongoose.Schema.Types.Mixed,
-	flagUnread: Boolean,
-	flagArchive: Boolean,
-	flagMobile: Boolean,
+	flagUnread:{ type: Boolean, default: true},
+	flagArchive: { type: Boolean, default: false},
+	flagMobile: { type: Boolean, default: false},
 	leadDate: { type: Date, default: Date.now },
 	leadQuality: Number
 });
