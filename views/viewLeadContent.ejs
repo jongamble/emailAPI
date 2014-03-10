@@ -23,8 +23,8 @@
 		<div class="col-sm-12">
 			<div class="well">
 				<h3><span class="fa fa-user"></span> View Lead Content</h3>
-				<% for(var i=0; i<leads[0].content.length; i++) { %>
-					<p><%=leads[0].content[i]%></p>
+				<% for(var i in lead.content) { %>
+					<p><%=leads.content[i]%></p>
 				<% } %>
 				
 			</div>
