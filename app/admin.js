@@ -69,11 +69,11 @@ module.exports = function(app, mongoose, passport) {
 		console.log(res.body);
 		User.findById(req.params.id, function(err, user) {
 			if (err) return next(err);
-			user.domain = res.body.domain;
-			user.name = res.body.name;
-			user.email = res.body.email; 
-			user.flagAdmin = res.body.flagAdmin;
-			user.flagActive = res.body.flagActive;
+			user.domain = req.body.domain;
+			user.name = req.body.name;
+			user.email = req.body.email; 
+			user.flagAdmin = req.body.flagAdmin;
+			user.flagActive = req.body.flagActive;
 			console.log(user);
 			//user.save();
 		});
