@@ -59,7 +59,7 @@ module.exports = function(app, mongoose, passport) {
 	// =====================================
 	
 	app.get('/profile/viewLeadContent/:id', isLoggedIn, function(req, res) {
-		Lead.findOne({_id: req.user._id}).exec(function (err, lead) {
+		Lead.findOne({_id: req.params.id}).exec(function (err, lead) {
 				res.render('profile/viewLeadContent.ejs', {lead : lead} );
 		});
 		// render the page and pass in any flash data if it exists
