@@ -139,9 +139,9 @@ module.exports = function(app, mongoose, passport) {
 	// =====================================
 	
 	app.get('/admin/viewLeadContent/:id', isLoggedIn, isAdmin, function(req, res) {
-		Lead.find({_id: req.params.id}).exec(function (err, leads) {
-				res.render('viewLeadContent.ejs', { leads : leads });
-				console.log(leads);
+		Lead.findOne({_id: req.params.id}).exec(function (err, lead) {
+				res.render('viewLeadContent.ejs', { lead });
+				console.log(lead);
 		});
 		// render the page and pass in any flash data if it exists
 	});
