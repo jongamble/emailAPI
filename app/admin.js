@@ -97,6 +97,27 @@ module.exports = function(app, mongoose, passport) {
 	});
 
 
+
+	/******
+	* Create Lead
+	******/
+
+	// process the edit user form
+	app.post('/admin/createLead', isLoggedIn, isAdmin, function(req, res) {
+		var lead = new Lead();
+			
+		lead.clientID = req.body.clientID;
+		lead.content.leadName = req.body.leadName;
+		lead.content.leadEmail = req.body.leadEmail;
+		lead.content.leadAddress = req.body.leadAddress;
+		lead.content.leadComments = req.body.leadComments;
+
+		lead.save(function(err){
+			if (err) console.log(err);
+			res.redirect('/admin');
+		});
+	});
+
 };
 
 // route middleware to make sure a user is logged in
