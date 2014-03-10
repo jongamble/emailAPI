@@ -77,7 +77,7 @@ module.exports = function(app, mongoose, passport) {
 			console.log(user);
 			user.save(function(err){
 			    if (err) console.log(err);
-			    return next();
+			    res.redirect('/admin');
 			});
 		});
 	});
