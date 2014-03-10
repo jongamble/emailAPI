@@ -17,7 +17,7 @@ module.exports = function(app, mongoose, passport) {
 
 	app.get('/admin', isLoggedIn, isAdmin,function(req, res) {
 		User.find().exec(function (err, items) {
-			res.render('admin.ejs', {
+			res.render('admin/admin.ejs', {
 				items : items // get the user out of session and pass to template
 			});
 	   	});
@@ -43,7 +43,7 @@ module.exports = function(app, mongoose, passport) {
 	app.get('/admin/createUser', isLoggedIn, isAdmin, function(req, res) {
 
 		// render the page and pass in any flash data if it exists
-		res.render('signup.ejs', { message: req.flash('signupMessage') });
+		res.render('admin/signup.ejs', { message: req.flash('signupMessage') });
 	});
 
 	// process the signup form
@@ -60,7 +60,7 @@ module.exports = function(app, mongoose, passport) {
 	// show the create user form
 	app.get('/admin/editUser/:id', isLoggedIn, isAdmin, function(req, res) {
 		User.find({_id: req.params.id}).exec(function (err, user) {
-				res.render('editUser.ejs', { user : user });
+				res.render('admin/editUser.ejs', { user : user });
 				console.log(user);
 		});
 		// render the page and pass in any flash data if it exists
@@ -128,7 +128,7 @@ module.exports = function(app, mongoose, passport) {
 	
 	app.get('/admin/listLeads/:id', isLoggedIn, isAdmin, function(req, res) {
 		Lead.find({clientID: req.params.id}).exec(function (err, leads) {
-				res.render('listLeads.ejs', { leads : leads });
+				res.render('admin/listLeads.ejs', { leads : leads });
 				console.log(leads);
 		});
 		// render the page and pass in any flash data if it exists
@@ -140,7 +140,7 @@ module.exports = function(app, mongoose, passport) {
 	
 	app.get('/admin/viewLeadContent/:id', isLoggedIn, isAdmin, function(req, res) {
 		Lead.findOne({_id: req.params.id}).exec(function (err, lead) {
-				res.render('viewLeadContent.ejs', {lead : lead} );
+				res.render('admin/viewLeadContent.ejs', {lead : lead} );
 				console.log(lead);
 		});
 		// render the page and pass in any flash data if it exists

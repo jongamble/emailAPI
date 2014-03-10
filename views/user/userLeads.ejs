@@ -1,0 +1,60 @@
+<!-- views/listLeads.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>Node Authentication</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		body { padding-top:80px; word-wrap:break-word; }
+	</style>
+</head>
+<body>
+<div class="container">
+
+	<div class="page-header text-center">
+		<h1><span class="fa fa-anchor"></span> Admin</h1>
+		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+	</div>
+
+	<div class="row">
+		<!-- LOCAL INFORMATION -->
+		<div class="col-sm-12">
+			<div class="well">
+				<h3><span class="fa fa-user"></span> Current Leads</h3>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Data</th>
+							<th>Unread?</th>
+							<th>Archived?</th>
+							<th>Is Mobile?</th>
+							<th>Lead Date</th>
+							<th>Lead Quality</th>
+						</tr>
+					</thead>	
+					<tbody>
+					 <% for(var i=0; i<leads.length; i++) { %>
+						<tr>
+							<td><a href="/admin/viewLeadContent/<%=leads[i]._id%>">View Content</a></td>
+							<td><%=leads[i].flagUnread%></td>
+							<td><%=leads[i].flagArchive%></td>
+							<td><%=leads[i].flagMobile%></td>
+							<td><%=leads[i].leadDate%></td>
+							<td><%=leads[i].leadQuality%></td>
+						</tr>
+					<% } %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+	</div>
+	<hr>
+	<p>Or go <a href="/admin">back</a>.</p>
+
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/js/scripts.js"></script>
+</body>
+</html>
