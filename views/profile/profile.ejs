@@ -52,6 +52,50 @@
 		</div>
 
 	</div>
+	<div class="row">
+		<!-- Create User Form -->
+		<div class="col-sm-12">
+			<div class="well">
+				<h3><span class="fa fa-user"></span> Create Lead</h3>
+				<form action="/profile/createLead" class="form-horizontal" method="post">
+					<div class="control-group">
+						<label for="clientID" class="control-label">Client ID</label>
+						<div class="controls">
+							<select name="clientID" class="input-large">
+								<option ng-repeat="user in user" value="{{user._id}}">{{user.domain}}</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="leadName" class="control-label">Lead Name</label>
+						<div class="controls">
+							<input type="text" class="input-large" name="leadName">
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="leadEmail" class="control-label">Lead Email</label>
+						<div class="controls">
+							<input type="text" class="input-large" name="leadEmail">
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="leadAddress" class="control-label">Lead Address</label>
+						<div class="controls">
+							<input type="text" class="input-large" name="leadAddress">
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="leadComments" class="control-label">Lead Comments</label>
+						<div class="controls">
+							<textarea name="leadComments" rows="5"></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<button class="btn btn-large" type="submit" name="submit" value="submit">Submit</button>
+					</div>
+				</form>
+
+	</div>
 
 </div>
 
