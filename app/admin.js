@@ -68,11 +68,11 @@ module.exports = function(app, mongoose, passport) {
 	app.post('/admin/editUser/:id', isLoggedIn, isAdmin, function(req, res) {
 		User.findById(req.params.id, function(err, user) {
 			if (err) return next(err);
-			user.domain : req.params.domain, 
-			user.name: req.params.name, 
-			user.email: req.params.email, 
-			user.flagAdmin: req.params.flagAdmin, 
-			user.flagActive: req.params.flagActive
+			user.domain = req.params.domain;
+			user.name = req.params.name;
+			user.email = req.params.email; 
+			user.flagAdmin = req.params.flagAdmin;
+			user.flagActive = req.params.flagActive;
 			
 			user.save();
 		});
