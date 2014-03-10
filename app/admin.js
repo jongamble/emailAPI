@@ -73,8 +73,8 @@ module.exports = function(app, mongoose, passport) {
 			user.email = req.params.email; 
 			user.flagAdmin = req.params.flagAdmin;
 			user.flagActive = req.params.flagActive;
-			
-			user.save();
+			console.log(user);
+			//user.save();
 		});
 	});
 
