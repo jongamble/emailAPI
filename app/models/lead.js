@@ -6,7 +6,7 @@ var ObjectId = mongoose.Schema.ObjectId;
 // define the schema for our user model
 var leadSchema = mongoose.Schema({
 	clientID: ObjectId,
-	content: Schema.Types.Mixed,
+	content: mongoose.Schema.Types.Mixed,
 	flagUnread: Boolean,
 	flagArchive: Boolean,
 	flagMobile: Boolean,
