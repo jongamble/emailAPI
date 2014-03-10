@@ -50,7 +50,7 @@ function profileController($scope, $http) {
 	// when landing on the page, get all todos and show them
 	$http.get('/profile/listLeads')
 		.success(function(data) {
-			$scope.users = data;
+			$scope.leads = data;
 			//console.log(data);
 		})
 		.error(function(data) {
