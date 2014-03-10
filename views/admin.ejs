@@ -47,10 +47,21 @@
 						</tr>
 					</tbody>
 				</table>
-					
-
 			</div>
 		</div>
+		<div class="col-sm-12">
+			<div class="well">
+				<h3><span class="fa fa-user"></span> Current Users</h3>
+				<form action="/admin/createLead" class="form-horizontal">
+					<div class="control-group">
+						<label for="clientID" class="control-label">Client ID</label>
+						<div class="controls">
+							<select name="clientID">
+								<option ng-repeat="user in users" value="{{user._id}}">{{user.domain}}</option>
+							</select>
+						</div>
+					</div>
+				</form>
 
 	</div>
 

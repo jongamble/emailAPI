@@ -1,4 +1,6 @@
 var User	=	require('../app/models/user');
+var Lead	=	require('../app/models/lead');
+
 // app/admin.js
 module.exports = function(app, mongoose, passport) {
 
