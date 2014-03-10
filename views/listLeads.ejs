@@ -26,19 +26,17 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>Domain</th>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Active?</th>
-							<th>Admin?</th>
-							<th>Edit</th>
-							<th>Delete</th>
+							<th>Data</th>
+							<th>Unread?</th>
+							<th>Archived?</th>
+							<th>Is Mobile?</th>
+							<th>Lead Date</th>
+							<th>Lead Quality</th>
 						</tr>
 					</thead>	
 					<tbody>
 					 <% for(var i=0; i<leads.length; i++) { %>
 						<tr>
-							<td><%=leads[i].clientID%></td>
 							<td><%=leads[i].content%></td>
 							<td><%=leads[i].flagUnread%></td>
 							<td><%=leads[i].flagArchive%></td>
