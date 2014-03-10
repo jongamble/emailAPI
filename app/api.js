@@ -5,10 +5,10 @@ var Lead	=	require('../app/models/lead');
 module.exports = function(app, mongoose, passport) {
 
 	// process the edit user form
-	app.post('/api/newLead', function(req, res) {
+	app.post('/api/newLead/:id', function(req, res) {
 		var lead = new Lead();
 			
-		lead.clientID = req.body.clientID;
+		lead.clientID = req.params.id;
 		lead.content = req.body;
 
 		lead.save(function(err){
