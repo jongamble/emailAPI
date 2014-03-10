@@ -49,7 +49,7 @@ module.exports = function(app, mongoose, passport) {
 
 		Lead.find({clientID: req.user._id}).exec(function (err, leads) {
 				console.log(leads);
-				res.send({leads : leads});
+				res.json(leads);
 		});
 		// render the page and pass in any flash data if it exists
 	});
