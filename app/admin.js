@@ -66,7 +66,7 @@ module.exports = function(app, mongoose, passport) {
 
 	// process the edit user form
 	app.post('/admin/editUser/:id', isLoggedIn, isAdmin, function(req, res) {
-		console.log(res.body);
+		
 		User.findById(req.params.id, function(err, user) {
 			if (err) return next(err);
 			user.domain = req.body.domain;
@@ -75,7 +75,7 @@ module.exports = function(app, mongoose, passport) {
 			user.flagAdmin = req.body.flagAdmin;
 			user.flagActive = req.body.flagActive;
 			console.log(user);
-			//user.save();
+			user.save();
 		});
 	});
 
