@@ -120,6 +120,20 @@ module.exports = function(app, mongoose, passport) {
 		});
 	});
 
+
+
+	// =====================================
+	// View Leads by User ===========================
+	// =====================================
+	
+	app.get('/admin/listLeads/:id', isLoggedIn, isAdmin, function(req, res) {
+		Lead.find({clientID: req.params.id}).exec(function (err, leads) {
+				res.render('listLeads.ejs', { leads : leads });
+				console.log(leads);
+		});
+		// render the page and pass in any flash data if it exists
+	});
+
 };
 
 // route middleware to make sure a user is logged in

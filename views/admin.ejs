@@ -37,7 +37,7 @@
 					</thead>	
 					<tbody>
 						<tr ng-repeat="user in users">
-							<td>{{user.domain}}</td>
+							<td><a ng-href="/admin/listLeads/{{user._id}}">{{user.domain}}</a></td>
 							<td>{{user.name}}</td>
 							<td>{{user.email}}</td>
 							<td>{{user.flagActive}}</td>
@@ -49,6 +49,7 @@
 				</table>
 			</div>
 		</div>
+		<!-- Create User Form -->
 		<div class="col-sm-12">
 			<div class="well">
 				<h3><span class="fa fa-user"></span> Create Lead</h3>

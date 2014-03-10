@@ -1,0 +1,61 @@
+<!-- views/admin.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>Node Authentication</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		body { padding-top:80px; word-wrap:break-word; }
+	</style>
+</head>
+<body>
+<div class="container">
+
+	<div class="page-header text-center">
+		<h1><span class="fa fa-anchor"></span> Admin Page</h1>
+		<a href="/admin/createUser" class="btn btn-default btn-sm">Create User</a>
+		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+	</div>
+
+	<div class="row">
+		<!-- LOCAL INFORMATION -->
+		<div class="col-sm-12">
+			<div class="well">
+				<h3><span class="fa fa-user"></span> Current Users</h3>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Domain</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Active?</th>
+							<th>Admin?</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>	
+					<tbody>
+					 <% for(var i=0; i<leads.length; i++) { %>
+						<tr>
+							<td><%=leads[i].clientID%></td>
+							<td><%=leads[i].content%></td>
+							<td><%=leads[i].flagUnread%></td>
+							<td><%=leads[i].flagArchive%></td>
+							<td><%=leads[i].flagMobile%></td>
+							<td><%=leads[i].leadDate%></td>
+							<td><%=leads[i].leadQuality%></td>
+						</tr>
+					<% } %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+	</div>
+
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/js/scripts.js"></script>
+</body>
+</html>
