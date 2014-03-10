@@ -22,24 +22,30 @@
 		<!-- LOGIN FORM -->
 		<form action="/admin/editUser/<%=user[0]._id%>" method="post">
 			<div class="form-group">
-				<label>Domain Name</label>
+				<label for="domain">Domain Name</label>
 				<input type="text" class="form-control" name="domain" value="<%= user[0].domain %>">
 			</div>
 			<div class="form-group">
-				<label>Name</label>
+				<label for="name">Name</label>
 				<input type="text" class="form-control" name="name" value="<%= user[0].name %>">
 			</div>
 			<div class="form-group">
-				<label>Email</label>
+				<label for="email">Email</label>
 				<input type="text" class="form-control" name="email" value="<%= user[0].email %>">
 			</div>
 			<div class="form-group">
-				<label>Is Admin?</label>
-				<input type="checkbox" class="form-control" name="flagAdmin" <%= user[0].flagAdmin? "checked" : ""%>  >
+				<label for="flagAdmin">Is Admin?</label>
+				<select name="flagAdmin" class="form-control">
+					<option value="true">True</option>
+					<option value="false">False</option>
+				</select>
 			</div>
 			<div class="form-group">
-				<label>Is Active?</label>
-				<input type="checkbox" class="form-control" name="flagActive" <%=user[0].flagActive? "checked" : ""%>  >
+				<label for="flagActive">Is Active?</label>
+				<select name="flagActive" class="form-control">
+					<option value="true">True</option>
+					<option value="false">False</option>
+				</select>
 			</div>
 			
 			<button type="submit" class="btn btn-warning btn-lg">Save</button>
