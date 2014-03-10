@@ -45,7 +45,7 @@ module.exports = function(app, mongoose, passport) {
 	
 	app.get('/profile/listLeads', isLoggedIn, function(req, res) {
 		Lead.find({clientID: req.user._id}).exec(function (err, leads) {
-				res.send(leads);
+				res.send({leads : leads});
 		});
 		// render the page and pass in any flash data if it exists
 	});
