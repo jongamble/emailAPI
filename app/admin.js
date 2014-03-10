@@ -66,6 +66,7 @@ module.exports = function(app, mongoose, passport) {
 
 	// process the edit user form
 	app.post('/admin/editUser/:id', isLoggedIn, isAdmin, function(req, res) {
+		console.log(res);
 		User.findById(req.params.id, function(err, user) {
 			if (err) return next(err);
 			user.domain = req.params.domain;
