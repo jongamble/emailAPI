@@ -1,7 +1,7 @@
 // public/core.js
 var adminFunctions = angular.module('adminFunctions', []);
 
-function mainController($scope, $http) {
+function adminController($scope, $http) {
 	$scope.formData = {};
 
 	// when landing on the page, get all todos and show them
@@ -44,7 +44,7 @@ function mainController($scope, $http) {
 
 var profileFunctions = angular.module('profileFunctions', []);
 
-function mainController($scope, $http) {
+function profileController($scope, $http) {
 	$scope.formData = {};
 
 	// when landing on the page, get all todos and show them
