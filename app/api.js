@@ -9,12 +9,7 @@ module.exports = function(app, mongoose, passport) {
 		var lead = new Lead();
 			
 		lead.clientID = req.body.clientID;
-		lead.content = { 
-			Name :req.body.leadName,
-			Email : req.body.leadEmail,
-			Address : req.body.leadAddress,
-			Comments : req.body.leadComments
-		}
+		lead.content = req.body;
 
 		lead.save(function(err){
 			if (err) console.log(err);
