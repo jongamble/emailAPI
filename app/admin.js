@@ -75,7 +75,9 @@ module.exports = function(app, mongoose, passport) {
 			user.flagAdmin = req.body.flagAdmin;
 			user.flagActive = req.body.flagActive;
 			console.log(user);
-			user.save();
+			user.save(function(err){
+			    if (err) console.log(err);
+			});
 		});
 	});
 
