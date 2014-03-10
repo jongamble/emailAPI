@@ -134,6 +134,18 @@ module.exports = function(app, mongoose, passport) {
 		// render the page and pass in any flash data if it exists
 	});
 
+	// =====================================
+	// View Leads by ID ===========================
+	// =====================================
+	
+	app.get('/admin/viewLeadContent/:id', isLoggedIn, isAdmin, function(req, res) {
+		Lead.find({_id: req.params.id}).exec(function (err, leads) {
+				res.render('viewLeadContent.ejs', { leads : leads });
+				console.log(leads);
+		});
+		// render the page and pass in any flash data if it exists
+	});
+
 };
 
 // route middleware to make sure a user is logged in

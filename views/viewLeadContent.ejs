@@ -1,4 +1,4 @@
-<!-- views/listLeads.ejs -->
+<!-- views/viewLeadContent.ejs -->
 <!doctype html>
 <html>
 <head>
@@ -22,31 +22,11 @@
 		<!-- LOCAL INFORMATION -->
 		<div class="col-sm-12">
 			<div class="well">
-				<h3><span class="fa fa-user"></span> Current Users</h3>
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Data</th>
-							<th>Unread?</th>
-							<th>Archived?</th>
-							<th>Is Mobile?</th>
-							<th>Lead Date</th>
-							<th>Lead Quality</th>
-						</tr>
-					</thead>	
-					<tbody>
-					 <% for(var i=0; i<leads.length; i++) { %>
-						<tr>
-							<td><a href="/admin/viewLeadContent/<%=leads[i]._id%>">View Content</a></td>
-							<td><%=leads[i].flagUnread%></td>
-							<td><%=leads[i].flagArchive%></td>
-							<td><%=leads[i].flagMobile%></td>
-							<td><%=leads[i].leadDate%></td>
-							<td><%=leads[i].leadQuality%></td>
-						</tr>
-					<% } %>
-					</tbody>
-				</table>
+				<h3><span class="fa fa-user"></span> View Lead Content</h3>
+				<% for(var i=0; i<leads[0].length; i++) { %>
+					<p><%=leads[0][i]%></p>
+				<% } %>
+				
 			</div>
 		</div>
 		
