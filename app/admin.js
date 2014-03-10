@@ -66,16 +66,16 @@ module.exports = function(app, mongoose, passport) {
 
 	// process the edit user form
 	app.post('/admin/editUser/:id', isLoggedIn, isAdmin, function(req, res) {
-		User.update({_id: req.params.id}, {$set: {
-			domain : req.params.domain, 
-			name: req.params.name, 
-			email: req.params.email, 
-			flagAdmin: req.params.flagAdmin, 
-			flagActive: req.params.flagActive
-			}}, {upsert:true}, function (err, user) {
-				user.save();
-			}
-		)
+		User.findById(req.params.id, function(err, user) {
+			if (err) return next(err);
+			user.domain : req.params.domain, 
+			user.name: req.params.name, 
+			user.email: req.params.email, 
+			user.flagAdmin: req.params.flagAdmin, 
+			user.flagActive: req.params.flagActive
+			
+			user.save();
+		});
 	});
 
 	/*
