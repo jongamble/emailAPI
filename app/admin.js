@@ -9,11 +9,7 @@ module.exports = function(app, mongoose, passport) {
 	// =====================================
 	// we will want this protected so you have to be logged in to visit
 	// we will use route middleware to verify this (the isLoggedIn function)
-	app.get('/profile', isLoggedIn, function(req, res) {
-		res.render('profile.ejs', {
-			user : req.user // get the user out of session and pass to template
-		});
-	});
+
 
 	app.get('/admin', isLoggedIn, isAdmin,function(req, res) {
 		User.find().exec(function (err, items) {
@@ -61,9 +57,7 @@ module.exports = function(app, mongoose, passport) {
 	app.get('/admin/editUser/:id', isLoggedIn, isAdmin, function(req, res) {
 		User.find({_id: req.params.id}).exec(function (err, user) {
 				res.render('admin/editUser.ejs', { user : user });
-				console.log(user);
 		});
-		// render the page and pass in any flash data if it exists
 	});
 
 	// process the edit user form
@@ -129,7 +123,6 @@ module.exports = function(app, mongoose, passport) {
 	app.get('/admin/listLeads/:id', isLoggedIn, isAdmin, function(req, res) {
 		Lead.find({clientID: req.params.id}).exec(function (err, leads) {
 				res.render('admin/listLeads.ejs', { leads : leads });
-				console.log(leads);
 		});
 		// render the page and pass in any flash data if it exists
 	});
@@ -141,7 +134,6 @@ module.exports = function(app, mongoose, passport) {
 	app.get('/admin/viewLeadContent/:id', isLoggedIn, isAdmin, function(req, res) {
 		Lead.findOne({_id: req.params.id}).exec(function (err, lead) {
 				res.render('admin/viewLeadContent.ejs', {lead : lead} );
-				console.log(lead);
 		});
 		// render the page and pass in any flash data if it exists
 	});
