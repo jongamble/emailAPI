@@ -32,6 +32,7 @@
 							<th>Phone</th>
 							<th>Lead Date</th>
 							<th>Comments</th>
+							<th>Full Content</th>
 						</tr>
 					</thead>	
 					<tbody>
@@ -42,6 +43,7 @@
 							<td><%=leads[i].content.Phone%></td>
 							<td><%=leads[i].leadDate%></td>
 							<td><%=leads[i].content.Comments%></td>
+							<td><a href="/admin/viewLeadContent/<%=leads[i]._id%>">View Content</a></td>
 						</tr>
 					<% } %>
 					</tbody>
