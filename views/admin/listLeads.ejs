@@ -27,23 +27,21 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>Data</th>
-							<th>Unread?</th>
-							<th>Archived?</th>
-							<th>Is Mobile?</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Phone</th>
 							<th>Lead Date</th>
-							<th>Lead Quality</th>
+							<th>Comments</th>
 						</tr>
 					</thead>	
 					<tbody>
 					 <% for(var i=0; i<leads.length; i++) { %>
 						<tr>
-							<td><a href="/admin/viewLeadContent/<%=leads[i]._id%>">View Content</a></td>
-							<td><%=leads[i].flagUnread%></td>
-							<td><%=leads[i].flagArchive%></td>
-							<td><%=leads[i].flagMobile%></td>
+							<td><%=leads[i].content.name%></td>
+							<td><%=leads[i].content.email%></td>
+							<td><%=leads[i].content.phone%></td>
 							<td><%=leads[i].leadDate%></td>
-							<td><%=leads[i].leadQuality%></td>
+							<td><%=leads[i].content.comments%></td>
 						</tr>
 					<% } %>
 					</tbody>
